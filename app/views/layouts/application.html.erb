@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ManagementEquipaments</title>
+
+  <title>Management Equipaments</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
@@ -13,7 +14,19 @@
 <% end %>
 </head>
 <body>
-
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">Gerenciamento de Equipamentos</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="<%=home_index_path%>">Home</a></li>
+      <li><a href="<%=equipment_index_path%>">Cadastro de equipamentos</a></li>
+      <li><a href="#">Page 2</a></li>
+      <li><a href="#">Page 3</a></li>
+    </ul>
+  </div>
+</nav>
 <%= yield %>
 
 </body>
