@@ -22,7 +22,7 @@
         <td><%= equipment.code %></td>
         <td><%= equipment.name %></td>
         <td><%= equipment.mark %></td>
-        <td><%= equipment.equipment_type %></td>
+        <td><%= get_name_attribute(equipment.equipment_type) %></td>
         <td><%= equipment.observations %></td>
         <td><%= link_to 'Ver', equipment %></td>
         <td><%= link_to 'Editar', edit_equipment_path(equipment) %></td>

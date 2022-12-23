@@ -25,6 +25,7 @@ class EquipmentController < ApplicationController
   # POST /equipment.json
   def create
     @equipment = Equipment.new(equipment_params)
+    @equipment.code = @equipment.encode(@equipment.code)
 
     respond_to do |format|
       if @equipment.save
