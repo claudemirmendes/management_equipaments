@@ -19,10 +19,20 @@ ManagementEquipaments::Application.configure do
 
   # Print deprecation notices to the Rails logger.
   config.active_support.deprecation = :log
-
+  
   # Raise an error on page load if there are pending migrations
   config.active_record.migration_error = :page_load
+  # config.paperclip_defaults = {
+  #   storage: :s3,
+  #   s3_credentials: {
+  #     bucket: 'management2',
+  #     access_key_id:"AKIAYCEKQABIQQORQHGT",
+  #     secret_access_key: "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" ,
+  #     s3_region: "US East (Ohio) us-east-2",
+  #   }
+  # }
 
+  
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.

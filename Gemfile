@@ -5,22 +5,21 @@ gem 'rails'
 gem 'bootstrap-sass'
 # Use mysql as the database for Active Record
 gem 'mysql2', '~> 0.4.0'
-
+gem 'google-cloud-storage'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.2'
-
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
-
 # Use CoffeeScript for .js.coffee assets and views
 gem 'coffee-rails', '~> 4.0.0'
-
+gem 'paperclip'
+gem 'aws-sdk', '~> 2.3'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-
+gem "font-awesome-sass", "~> 6.2.1"
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'kaminari'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 gem 'rails-i18n'

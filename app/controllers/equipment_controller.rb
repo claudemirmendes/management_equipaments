@@ -4,7 +4,7 @@ class EquipmentController < ApplicationController
   # GET /equipment
   # GET /equipment.json
   def index
-    @equipment = Equipment.all
+    @equipment = Equipment.search(params[:search]).page params[:page]
   end
 
   # GET /equipment/1
@@ -25,7 +25,6 @@ class EquipmentController < ApplicationController
   # POST /equipment.json
   def create
     @equipment = Equipment.new(equipment_params)
-    @equipment.code = @equipment.encode(@equipment.code)
 
     respond_to do |format|
       if @equipment.save
@@ -70,6 +69,6 @@ class EquipmentController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def equipment_params
-      params.require(:equipment).permit(:code, :name, :mark, :equipment_type, :observations)
+      params.require(:equipment).permit(:code, :name, :mark, :equipment_type, :observations, :search,:path_image )
     end
 end

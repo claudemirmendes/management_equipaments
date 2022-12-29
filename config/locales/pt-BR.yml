@@ -38,6 +38,12 @@ pt-BR:
         one: Equipamento
         other: Equipamentos
         blank: Não pode ficar em branco
+    views:
+      pagination:
+        first: Primeiro
+        last: Último
+        next: Próximo
+        previous: Anterior
   devise:
     confirmations:
       confirmed: A sua conta foi confirmada com sucesso.
@@ -154,3 +160,4 @@ pt-BR:
       not_saved:
         one: 'Não foi possível salvar %{resource}: 1 erro'
         other: 'Não foi possível salvar %{resource}: %{count} erros.'
+        

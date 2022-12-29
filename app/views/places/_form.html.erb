@@ -1,0 +1,47 @@
+<%= form_for(@place) do |f| %>
+  <% if @place.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@place.errors.count, "error") %> prohibited this place from being saved:</h2>
+
+      <ul>
+      <% @place.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :name %><br>
+    <%= f.text_field :name,class: 'form-control'  %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :"é uma sede?"     %><br>
+    <%= f.select(:head_squarter,{ "Sim" => "true",  "Não" => "false"}) %>
+  </div>
+
+  </div class="form-group">
+     <%= f.label :"A qual sede pertence?"     %>
+     <%= f.collection_select :hierarchical_id, Place.where(head_squarter: true),:id,:name, include_blank: true  %>
+   </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<script>
+    $( document ).ready(function() {
+    $("#place_hierarchical_id").prop( "disabled", true );
+    $('#place_head_squarter').on('change', function() {
+      var check = $(this).val();
+      if (check == "true") {
+        $("#place_hierarchical_id").val("");
+        $("#place_hierarchical_id").prop( "disabled", true );
+      } else
+       $("#place_hierarchical_id").prop( "disabled", false );
+    });
+      //  
+    });
+</script>

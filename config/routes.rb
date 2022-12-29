@@ -1,4 +1,7 @@
 ManagementEquipaments::Application.routes.draw do
+  resources :places
+  resources :places
+  resources :places
   get 'home/index'
   root 'home#index' 
   resources :equipment

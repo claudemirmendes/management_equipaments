@@ -2,8 +2,18 @@
 
 
 <div class="container">
-<h1>Listagem de Equipamentos</h1>
+<h1>Listagem de Equipamentos</h1> 
 
+<div>
+  <a href="<%= new_equipment_path %>" type=”button” class="btn btn-success"> Cadastrar Novo Equipamento</a>
+</div>
+<br>
+<div class="input-group">
+ <%= form_tag(equipment_index_path, method: :get )  do %>
+   <%= text_field_tag(:search, params[:search], :class => "form-label") %>
+   <%= submit_tag("Pesquisar", :class => "btn btn-primary")%>
+  <% end %>
+</div>
 <table class="table" >
   <thead>
     <tr>
@@ -19,7 +29,7 @@
   <tbody>
     <% @equipment.each do |equipment| %>
       <tr class="info">
-        <td><%= equipment.code %></td>
+        <td><%= equipment.id %></td>
         <td><%= equipment.name %></td>
         <td><%= equipment.mark %></td>
         <td><%= get_name_attribute(equipment.equipment_type) %></td>
@@ -32,7 +42,6 @@
   </tbody>
 </table>
   
+    <%= paginate @equipment %>
 <br>
-
-<a href="<%= new_equipment_path %>" type=”button” class="btn btn-success"> Cadastrar Novo Equipamento</a>
 </div>

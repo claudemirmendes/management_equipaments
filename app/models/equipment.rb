@@ -1,4 +1,5 @@
 class Equipment < ActiveRecord::Base
+    max_paginates_per 4
     validates :name, :mark, :equipment_type, presence: true
     enum equipment_type: {
         air_conditioner: 0,
@@ -10,4 +11,12 @@ class Equipment < ActiveRecord::Base
         TV: 6,
         router: 7
       }
+
+      def self.search(search)
+        if search.present?
+          equipment = Equipment.where("name like :search OR id = #{search.to_i}", search: "%#{search}%")
+        else
+          Equipment.all
+        end
+      end
 end
